@@ -1,0 +1,30 @@
+name: Terraform Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  terraform:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Terraform fmt
+        run: terraform fmt -check -diff
+        working-directory: ${{ github.workspace }}
+
+      - name: Terraform init
+        run: terraform init
+        working-directory: ${{ github.workspace }}
+
+      - name: Terraform plan
+        run: terraform plan
+        working-directory: ${{ github.workspace }}
+
+      - name: Terraform apply
+        run: terraform apply -auto-approve
+        working-directory: ${{ github.workspace }}
