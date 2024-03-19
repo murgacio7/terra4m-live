@@ -1,6 +1,17 @@
 terraform {
-  required_version = ">= 0.13.0"
+  backend "s3" {
+    bucket = "terraform-s3-us2"
+    key    = "my-terraform-project"
+    region = "us-east-2"
+  }
+}
 
+provider "aws" {
+  region = "us-east-2"
+}
+
+terraform {
+  required_version = ">= 0.13.0"
   required_providers {
     awscc = {
       source  = "hashicorp/awscc"
@@ -12,22 +23,6 @@ terraform {
     }
   }
 }
-
-backend "s3" {
-  bucket = "terraform-s3-state"
-  key    = "my-terraform-project.tfstate"
-  region = "us-east-2"
-}
-
-resource "aws_s3_bucket" "terraform_state_bucket" {
-  bucket = "terraform-s3-state"
-  acl    = "private"
-
-  tags = {
-    Name = "Terraform State Bucket"
-  }
-}
-
 resource "awscc_ecr_repository" "second-repo" {
   repository_name      = "project-02"
   image_tag_mutability = "MUTABLE"
