@@ -29,7 +29,7 @@ resource "aws_s3_bucket" "terraform_state_bucket" {
 }
 
 resource "awscc_ecr_repository" "second-repo" {
-  repository_name = "project-02"
+  repository_name      = "project-02"
   image_tag_mutability = "MUTABLE"
   image_scanning_configuration = {
     scan_on_push = true
