@@ -15,7 +15,7 @@ terraform {
     bucket                  = "terraform-s3-state"
     key                     = "my-terraform-project.tfstate"
     region                  = "us-east-2"
-    shared_credentials_file = "~/.aws/credentials"
+    #shared_credentials_file = "~/.aws/credentials"
   }
 }
 
