@@ -1,4 +1,4 @@
 provider "google" {
-  project = "decisive-sylph-417822"
-  region  = "us-central1"
+  project = var.project_id #"decisive-sylph-417822"
+  region  = var.region     #"us-central1"
 }
