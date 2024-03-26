@@ -7,5 +7,4 @@ module "qa_gke_cluster1" {
   node_count       = 1
   disk_size_gb     = 60
   region           = "us-central1"
-  project_id       = "decisive-sylph-417822"
 }
