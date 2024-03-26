@@ -1,4 +1,4 @@
-module "gke_cluster" {
+module "dev_gke_cluster" {
   source           = "git@github.com:murgacio7/tf-modules.git//gke"
   sa_account_id    = "dev-gke-cluster"
   sa_display_name  = "DEV service account for gke cluster"
