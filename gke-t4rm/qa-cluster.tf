@@ -6,5 +6,5 @@ module "qa_gke_cluster1" {
   cluster_location = "us-central1-a"
   region           = "us-central1"
   node_count       = 1
-  disk_size_gb     = 60
+  disk_size_gb     = "20"
 }
