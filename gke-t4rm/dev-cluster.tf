@@ -6,5 +6,5 @@ module "dev_gke_cluster" {
   cluster_location = "us-central1-b"
   region           = "us-central1"
   node_count       = 1
-  disk_size_gb     = 60
+  disk_size_gb     = "20"
 }
